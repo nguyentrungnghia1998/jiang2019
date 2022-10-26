@@ -29,11 +29,11 @@ A = [0 0 1 0;
      0 0 0 -By/J_Ty];
 B = [0 0;0 0; Kpp/J_Tp Kpy/J_Tp; Kyp/J_Ty Kyy/J_Ty];
 C = [1 0 1 0]';
-Q = 2*eye(4);
+Q = 0.5*eye(4);
 R = 0.2*eye(2);
 P = icare(A,[B C],Q,blkdiag(R,-gamma^2));
 %% Initial value
-x{1} = [0.2;0;0.8;0];
+x{1} = [0.2;0.8;0;-0.1];
 %% Simulation
 for i = 1:length(t)
     x_i = x{i};
